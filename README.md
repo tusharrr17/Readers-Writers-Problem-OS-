@@ -28,7 +28,7 @@ Functions for semaphore :
 * It exits the critical section.
 
 ```c++
-reader():
+writer():
 while(true){
     wait(rw_lock);  /* writer requests to enter critical section */
     
@@ -47,7 +47,7 @@ while(true){
     - After performing reading, it exits the critical section. When exiting, it checks if no more reader is inside, it signals the semaphore “**rw_lock**” as now, writer can enter the critical section.
 * If not allowed, it keeps on waiting.
 ```c++
-writer():
+reader():
 
 while(true){
    wait(mutex);  /* Reader wants to enter the critical section */

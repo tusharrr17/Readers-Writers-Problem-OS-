@@ -5,13 +5,13 @@
 Three variables are used in the pseudocode: mutex, rw_lock, reader_count 
 
 We define a variable **reader_count** which gives the number of processes performing read in the critical section currently,
-```
+```c++
 int reader_count; 
 ```
 Semaphore **mutex** is used to ensure mutual exclusion when **reader_count** is updated i.e. when any reader enters or exit from the critical section. 
 
 Semaphore **rw_lock** is used by both readers and writers to ensure that writers dont enter thier critical section when a reader is already in thier critical section and vice versa. */
-```
+```c++
 semaphore mutex, rw_lock; 
 ```
 Functions for semaphore : 

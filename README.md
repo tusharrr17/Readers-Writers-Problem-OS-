@@ -54,7 +54,7 @@ while(true){
    reader_count++;  /* The number of readers is increased by 1 */          
    
    if (reader_count==1) {    
-		wait(rw_lock);    
+	wait(rw_lock);    
    }    
    /*  now we have atleast one reader in critical section and this ensures that
        no writer can enter if there is more than or equal to 1 in the critical section 
@@ -70,7 +70,7 @@ while(true){
 
    if (reader_count == 0) {
         signal(rw_lock);
-	}  
+   }  
    /* Now no reader is left in the critical section and only then the writers can enter */
    
    signal(mutex); /* reader leaves */ 

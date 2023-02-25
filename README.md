@@ -27,7 +27,7 @@ Functions for semaphore :
 * If allowed i.e. wait() return true, it enters and performs the write operation. If not allowed, it keeps waiting.
 * It exits the critical section.
 
-```
+```c++
 reader():
 while(true){
     wait(rw_lock);  /* writer requests to enter critical section */
@@ -46,7 +46,7 @@ while(true){
     - It then, signals **mutex** as any other reader is allowed to enter while others are already reading.
     - After performing reading, it exits the critical section. When exiting, it checks if no more reader is inside, it signals the semaphore “**rw_lock**” as now, writer can enter the critical section.
 * If not allowed, it keeps on waiting.
-```
+```c++
 writer():
 
 while(true){

@@ -1,7 +1,8 @@
 int reader_count = 0;
 semaphore rw_lock = 1, mutex = 1;
 
-reader() : while (true)
+writer() : 
+while (true)
 {
     wait(rw_lock); /* writer requests to enter critical section */
 
@@ -10,9 +11,8 @@ reader() : while (true)
     signal(rw_lock); /* writer leaves the critical section */
 }
 
-writer() :
-
-           while (true)
+reader() :
+while (true)
 {
     wait(mutex);    /* Reader wants to enter the critical section */
     reader_count++; /* The number of readers is increased by 1 */

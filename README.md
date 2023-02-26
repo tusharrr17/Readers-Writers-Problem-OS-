@@ -10,7 +10,7 @@ int reader_count;
 ```
 Semaphore **mutex** is used to ensure mutual exclusion when **reader_count** is updated i.e. when any reader enters or exit from the critical section. 
 
-Semaphore **rw_lock** is used by both readers and writers to ensure that writers dont enter thier critical section when a reader is already in thier critical section and vice versa. */
+Semaphore **rw_lock** is used by both readers and writers to ensure that writers dont enter thier critical section when a reader is already in thier critical section and vice versa. 
 ```c++
 semaphore mutex, rw_lock; 
 ```

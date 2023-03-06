@@ -78,3 +78,9 @@ while(true){
 ```
 
 Thus, the semaphore **rw_lock** is used to give preference to readers by ensuring that no writer enters when a reader is reading.
+In this solution, both readers and writers have equal priority to access the critical section. The reader is given preference over the writer if there are already readers in the critical section.
+This ensures that the writer does not starve while waiting for access to the critical section.
+Similarly, if there are no readers in the critical section, the writer can access it without any delay.
+This ensures that the readers do not starve while waiting for access to the critical section.
+
+Therefore, this solution provides fair access to the critical section for both readers and writers, and it is starvation-free.
